@@ -1,0 +1,65 @@
+<?php
+$request=array(
+  "eOrderId"=>"TEST-12345",
+  "service"=>"regular",
+  "jobType"=>"delivery",
+  "pickupLocationId"=>19,
+  "pickupTime"=>"2017-03-27 09:00:00",
+  "requestDateTime"=>"2017-03-28 20:00:00",
+  "sender"=>array(
+    "contactName"=>"John Doe",
+    "contactNumber"=>"91234567",
+    "contactEmail"=>"john@doe.com",
+    "location"=>array(
+      "address"=>"Blk 245 Hougang Street 22",
+      "address2"=>"#05-457",
+      "city"=>"Singapore",
+      "state"=>"Singapore",
+      "postalCode"=>"530245",
+      "countryCode"=>"SG"
+    )
+  ),
+  "receiver"=>array(
+    "contactName"=>"Jane Doe",
+    "contactNumber"=>"81234567",
+    "contactEmail"=>"jane@doe.com",
+    "location"=>array(
+      "address"=>"Blk 787 Woodlands Circle",
+      "address2"=>"#04-043",
+      "city"=>"Singapore",
+      "state"=>"Singapore",
+      "postalCode"=>"730787",
+      "countryCode"=>"SG"
+    )
+  ),
+  "parcels"=>array(
+    "description"=>"Cosmetics",
+    "orderRemarks"=>"Pls do not stack"
+  ),
+  "parcelsInfo"=>array(
+    "height"=>30,
+    "width"=>30,
+    "length"=>30,
+    "weight"=>2,
+    "declaredValue"=>120,
+    "declaredCurrency"=>"SGD"
+  ),
+  "codInfo"=>array(
+    "value"=>120,
+    "currency"=>"SGD"
+  ),
+  "merchantInfo"=>array(
+    "eStoreId"=>"STORE",
+    "merchantId"=>"M001"
+  ),
+  "orderInfo"=>array(
+    "productIds"=>"P001",
+    "orderQuantity"=>2,
+    "commodity"=>"Costmetics",
+    "processOrderDate"=>"2017-03-26",
+    "insuredValue"=>120,
+    "insuredCurrency"=>"SGD",
+    "gtin"=>"0001"
+  )
+);
+?>

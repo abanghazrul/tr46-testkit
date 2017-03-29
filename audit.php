@@ -14,14 +14,14 @@ License: MIT License.
 include_once("tr46_base.php");
 
 // load your own classes below if you need to extend the base class
-//include_once("tr46_yoursystem.php");
+include_once("tr46_yoursystem.php");
 
 // Fix the timezone to Singapore
 date_default_timezone_set('Asia/Singapore');
 
 // ok lah. let's crank this up!
-$tr46_test = new TR46_Base();
-//$tr46_test = new TR46_YourSystem();
+//$tr46_test = new TR46_Base();
+$tr46_test = new TR46_YourSystem();
 $tr46_test->main();
 
 ?>

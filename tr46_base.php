@@ -507,7 +507,6 @@ class TR46_Base {
     $array_response = (array) $response;
 
     foreach($tr46_keys as $key):
-
       if (in_array($key, $this->array_keys_multi($array_response))):
         $this->key_exists_grade($key,"pass");
       else:
@@ -518,10 +517,27 @@ class TR46_Base {
 
     $iterator = new RecursiveIteratorIterator(new RecursiveArrayIterator(json_decode($response)));
 
+    $status="";
+
     foreach($iterator as $key=>$value):
-      if ($key === "status" or $key === "deliveryId"):
+
+      if($key==="status"):
+        $status=$value;
+      endif;
+
+      if ($key === "status"):
 
         if(is_string($value) and strlen($value)<="35"):
+          $this->key_is_valid_grade($key,"pass");
+        else:
+          $this->key_is_valid_grade($key,"fail");
+        endif;
+
+      endif;
+
+      if ($key === "deliveryId"):
+
+        if((is_string($value) and strlen($value)<="35") or (is_null($value) and $status=="Failed")):
           $this->key_is_valid_grade($key,"pass");
         else:
           $this->key_is_valid_grade($key,"fail");
@@ -544,7 +560,7 @@ class TR46_Base {
 
       if ($key === "eOrderId"):
 
-        if(is_string($value) and strlen($value)<="64"):
+        if((is_string($value) and strlen($value)<="64") or (is_null($value) and $status=="Failed")):
           $this->key_is_valid_grade($key,"pass");
         else:
           $this->key_is_valid_grade($key,"fail");

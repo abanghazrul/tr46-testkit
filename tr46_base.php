@@ -22,6 +22,24 @@ class TR46_Base {
     return $endpoint;
   }
 
+  // if your API requires a token, set the token endpoint here.
+  function config_create_order_endpoint() {
+    $endpoint=""; // It could be something like "order/create"
+    return $endpoint;
+  }
+
+  // if your API requires a token, set the token endpoint here.
+  function config_get_status_endpoint() {
+    $endpoint=""; // It could be something like "order/status"
+    return $endpoint;
+  }
+
+  // if your API requires a token, set the token endpoint here.
+  function config_cancel_order_endpoint() {
+    $endpoint=""; // It could be something like "order/cancel"
+    return $endpoint;
+  }
+
   // A boilerplate for token generation for APIs with tokenisation. Edit as required.
   function generate_token() {
     $url=$this->config_base_url().$this->config_token_endpoint();
@@ -374,7 +392,7 @@ class TR46_Base {
       $this->create_delivery_order($token);
     endif;
 
-    $url=$this->config_base_url()."merchant/orders";
+    $url=$this->config_base_url().$this->config_create_order_endpoint();
     $data_string=json_encode($request);
 
     $response=$this->send($url,"default","POST",$data_string,$token);
@@ -405,7 +423,7 @@ class TR46_Base {
     $input=$this->read_stdin();
 
     if($input!=""):
-      $url=$this->config_base_url()."merchant/orders/status/$input";
+      $url=$this->config_base_url().$this->config_get_status_endpoint()."$input";
       $data_string=json_encode($request);
       $response=$this->send($url,"default","GET",$data_string,$token);
 
@@ -444,7 +462,7 @@ class TR46_Base {
     );
 
     if($deliveryId!="" and $request!=""):
-      $url=$this->config_base_url()."merchant/orders/cancel";
+      $url=$this->config_base_url().$this->config_cancel_order_endpoint();
 
       $data_string=json_encode($request);
       $response=$this->send($url,"default","PUT",$data_string,$token);

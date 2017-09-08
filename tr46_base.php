@@ -150,7 +150,7 @@ class TR46_Base {
 
     ";
     echo $ascii_art."\n";
-    echo "        Copyright (c) Hazrul Azhar Jamari. Website: http://www.matwp.com. Github: https://github.com/abanghazrul\n\n";
+    echo "        Copyright (c) Hazrul Azhar Jamari. Website: https://www.hazrulazhar.com. Github: https://github.com/abanghazrul\n\n";
     echo "\nHello. This testkit audits your API against the TR46:2016 standards.\n\n";
 
     echo "These are the tests that we will be doing.:\n\n";
@@ -722,7 +722,7 @@ class TR46_Base {
   ";
 
       echo $ascii_art;
-      echo "    Copyright (c) Hazrul Azhar Jamari. Website: http://www.matwp.com. Github: https://github.com/abanghazrul\n\n";
+      echo "    Copyright (c) Hazrul Azhar Jamari. Website: https://www.hazrulazhar.com. Github: https://github.com/abanghazrul\n\n";
       exit;
     endif;
   }

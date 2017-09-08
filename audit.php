@@ -2,7 +2,7 @@
 /***
 TR46:2016 TestKit
 Author: Hazrul Azhar Jamari
-Website: http://www.matwp.com
+Website: https://www.hazrulazhar.com
 Github: https://github.com/abanghazrul
 Description: A command line testkit that helps the auditing of Last Mile Delivery Provider APIs.
 Version: 1.0
